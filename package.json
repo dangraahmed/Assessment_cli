@@ -21,7 +21,6 @@
     "@angular/platform-browser": "^5.1.0",
     "@angular/platform-browser-dynamic": "^5.1.0",
     "@angular/router": "^5.1.0",
-    "@ngrx/core": "^1.2.0",
     "@ngrx/store": "^4.1.1",
     "@ngrx/effects": "4.1.1",
     "core-js": "^2.4.1",
@@ -29,6 +28,7 @@
     "zone.js": "^0.8.19"
   },
   "devDependencies": {
+    "@angular-devkit/core": "^0.0.28",
     "@angular/cli": "1.6.4",
     "@angular/compiler-cli": "^5.1.0",
     "@angular/language-service": "^5.1.0",

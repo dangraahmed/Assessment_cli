@@ -24,6 +24,7 @@ export class AppComponent implements OnInit, OnDestroy {
       .subscribe(p => {
         this.store.dispatch(new Cart.CartAction());
         if (p !== undefined) {
+          debugger;
           this.listOfProduct = p;
         }
       });

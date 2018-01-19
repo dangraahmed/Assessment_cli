@@ -14,8 +14,8 @@ import { EffectsModule } from '@ngrx/effects';
   imports: [
     BrowserModule,
     CartModule,
-    StoreModule.provideStore(AppReducer),
-    EffectsModule.run(CartEffects),
+    StoreModule.forRoot(AppReducer),
+    EffectsModule.forRoot([CartEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent]

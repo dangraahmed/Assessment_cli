@@ -7,17 +7,11 @@ import { Cart } from '../actions/index';
 
 @Injectable()
 export class CartEffects {
-    // @Effect() loadCartSlabs$: Observable<Action> = this.actions$
-    //     .ofType(Cart.ActionTypes.LOAD_PRODUCT)
-    //     .switchMap(() => this.cartService.getProduct())
-    //     .map(payload => new Cart.CartSuccessfulAction(payload))
-    //     .catch(() => Observable.of(new Cart.CartFailedAction()));
-
     @Effect()
     loadCart$: Observable<Action> = this.actions$
         .ofType(Cart.ActionTypes.LOAD_PRODUCT)
         .debounceTime(300)
-        .map(toPayload)
+        .map((action: Cart.CartAction) => action.payload)
         .switchMap(param => {
             return this.cartService.getProduct()
                 .map(payload => {
@@ -27,21 +21,6 @@ export class CartEffects {
                     return Observable.of(new Cart.CartFailedAction());
                 });
         });
-
-        // @Effect()
-        // addToCart$: Observable<Action> = this.actions$
-        //     .ofType(Cart.ActionTypes.ADD_TO_CART)
-        //     .debounceTime(300)
-        //     .map(toPayload)
-        //     .switchMap(param => {
-        //         return this.cartService.getProduct()
-        //             .map(payload => {
-        //                 return new Cart.AddToCartSuccessfulAction(payload);
-        //             })
-        //             .catch((e) => {
-        //                 return Observable.of(new Cart.AddToCartFailedAction());
-        //             });
-        //     });
 
     constructor(
         private store: Store<any>,
