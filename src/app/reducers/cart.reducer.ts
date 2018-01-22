@@ -6,7 +6,7 @@ export function cartReducer(
   action: Cart.Actions
 ): any {
   let index: number;
-  debugger;
+  
   switch (action.type) {
     case Cart.ActionTypes.LOAD_PRODUCT_SUCCESSFUL:
       return (<any>Object).assign({}, state, { products: action.payload });

@@ -11,7 +11,7 @@ export class CartEffects {
     loadCart$: Observable<Action> = this.actions$
         .ofType(Cart.ActionTypes.LOAD_PRODUCT)
         .debounceTime(300)
-        .map((action: Cart.CartAction) => action.payload)
+        .map(toPayload)
         .switchMap(param => {
             return this.cartService.getProduct()
                 .map(payload => {

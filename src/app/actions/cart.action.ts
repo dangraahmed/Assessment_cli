@@ -2,8 +2,6 @@ import { Action } from '@ngrx/store';
 import { ICartState, IProduct, ICartProduct } from '../states/index';
 
 export namespace Cart {
-    export const CATEGORY: string = 'Cart';
-
 
     export interface ICartActions {
         LOAD_PRODUCT: string;
@@ -15,12 +13,12 @@ export namespace Cart {
     }
 
     export const ActionTypes: ICartActions = {
-        LOAD_PRODUCT: `${CATEGORY} Product Load`,
-        LOAD_PRODUCT_SUCCESSFUL: `${CATEGORY} Product Successful`,
-        LOAD_PRODUCT_FAILED: `${CATEGORY} Product Failed`,
+        LOAD_PRODUCT: 'Cart Product Load',
+        LOAD_PRODUCT_SUCCESSFUL: 'Cart Product Successful',
+        LOAD_PRODUCT_FAILED: 'Cart Product Failed',
 
-        ADD_TO_CART: `${CATEGORY} Add to cart`,
-        REMOVE_TO_CART: `${CATEGORY} Remove from cart`,
+        ADD_TO_CART: 'Cart Add to cart',
+        REMOVE_TO_CART: 'Cart Remove from cart',
     };
 
     export class CartAction implements Action {
