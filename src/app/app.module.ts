@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppReducer } from './ngrx/index';
+import { reducers  } from './ngrx/index';
 
 import { AppComponent } from './app.component';
 import { CartModule, CartEffects } from './index';
@@ -14,7 +14,7 @@ import { EffectsModule } from '@ngrx/effects';
   imports: [
     BrowserModule,
     CartModule,
-    StoreModule.forRoot({ AppReducer }, {}),
+    StoreModule.forRoot({ reducers }, {}),
     EffectsModule.forRoot([CartEffects]),
   ],
   providers: [],

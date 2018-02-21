@@ -7,15 +7,15 @@ export interface IAppState {
   cart: fromCart.ICartState;
 }
 
-const reducers: ActionReducerMap<IAppState> = {
+export const reducers: ActionReducerMap<IAppState> = {
   cart: fromCart.cartReducer,
 };
 
-const rootReducer = combineReducers(reducers);
+// const rootReducer = combineReducers(reducers);
 
-export function AppReducer(state: any, action: any) {
-  return rootReducer(state, action);
-}
+// export function AppReducer(state: any, action: any) {
+//   return rootReducer(state, action);
+// }
 
 export function getProduct(state: IAppState) {
   return state.cart;
